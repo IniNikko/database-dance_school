@@ -1,0 +1,109 @@
+(MTM group)
+(MTM direction)
+(OTM transaction)
+dancer:
+	+name: varchar
+	+surmane: varchar
+	+middle_name: varchar
+	date_birth: date
+	age: int(2)
+	place_study_or_work: varchar
+
+
+(MTM dancer)
+(MTM choreographer)
+(MTM schedule)
+(OTM choreography)
+group:
+	+name: varchar
+	+age: int(2)
+
+
+(MTM dancer)
+(OTM choreography)
+direction:
+	+type: varchar
+
+
+(MTM group)
+(MTM schedule)
+(OTM choreography)
+choreographer:
+	+name: varchar
+	+surmane: varchar
+	+middle_name: varchar
+	+date_birth: date
+	+age: int(2)
+	+spacialization: varchar
+	+post: varchar
+	+place_education:varchar
+
+
+(MTO group)
+(MTO direction)
+(MTO choreographer)
+(MTO music)
+(OTO performance)
+choreography:
+	+title: varchar
+	+production_date: int(2)
+	
+	
+(OTM choreography)
+music:
+	+author: varchar
+	+title: varchar
+	+words: boolean
+	+language: varchar
+	
+(MTM competition)
+(OTO choreographer)
+(OTM suit)
+(OTM requisite)
+performance:
+	+name: varchar
+	+share: varchar
+	
+
+(MTO performance)
+suit:
+	+description: varchar
+	+size: int(2)
+	+quantity: int
+
+
+(MTO performance)
+requisite:
+	+description: varchar
+	+size: int
+	
+
+(MTM performance)
+competition:
+	+title: varchar
+	+type: varchar
+	+date: date
+	+adress: varchar
+
+
+(MTM hall)
+(MTM choreographer)
+(MTM group)
+schedule:
+	+date: date
+	+start_time: time
+	+end_time: time
+
+
+(MTM schedule)
+hall:
+	+number: int
+	+size: int
+	+presence_morror: boolean
+	+presence_locker_room: boolean
+	
+
+(MTO dancer)
+transaction:
+	+date: date
+	+amount: int
