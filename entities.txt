@@ -2,12 +2,12 @@
 (MTM direction)
 (OTM transaction)
 dancer:
-	+name: varchar
-	+surmane: varchar
-	+middle_name: varchar
-	date_birth: date
-	age: int(2)
-	place_study_or_work: varchar
+	+name: varchar(15) NOT_NULL
+	+surmane: varchar(15) NOT_NULL
+	+middle_name: varchar(15)
+	date_birth: date NOT_NULL
+	age: tinyint >= 4
+	place_study_or_work: varchar(100)
 
 
 (MTM dancer)
@@ -15,28 +15,28 @@ dancer:
 (MTM schedule)
 (OTM choreography)
 group:
-	+name: varchar
-	+age: int(2)
+	+name: varchar(15) NOT_NULL
+	+age: varchar(5) NOT_NULL
 
 
 (MTM dancer)
 (OTM choreography)
 direction:
-	+type: varchar
+	+type: varchar(15) NOT_NULL
 
 
 (MTM group)
 (MTM schedule)
 (OTM choreography)
 choreographer:
-	+name: varchar
-	+surmane: varchar
-	+middle_name: varchar
-	+date_birth: date
-	+age: int(2)
-	+spacialization: varchar
-	+post: varchar
-	+place_education:varchar
+	+name: varchar(15) NOT_NULL
+	+surmane: varchar(15) NOT_NULL
+	+middle_name: varchar(15)
+	+date_birth: date NOT_NULL
+	+age: tinyintint >= 18
+	+spacialization: varchar(25) NOT_NULL
+	+post: varchar(25) NOT_NULL
+	+place_education:varchar(100) NOT_NULL
 
 
 (MTO group)
@@ -45,65 +45,65 @@ choreographer:
 (MTO music)
 (OTO performance)
 choreography:
-	+title: varchar
-	+production_date: int(2)
+	+title: varchar(20)
+	+production_date: date NOT_NULL
 	
 	
 (OTM choreography)
 music:
-	+author: varchar
-	+title: varchar
-	+words: boolean
-	+language: varchar
+	+author: varchar(25) NOT_NULL
+	+title: varchar(25) NOT_NULL
+	+words: boolean NOT_NULL
+	+language: varchar(15)
 	
 (MTM competition)
 (OTO choreographer)
 (OTM suit)
 (OTM requisite)
 performance:
-	+name: varchar
-	+share: varchar
+	+name: varchar(25) NOT_NULL
+	+share: varchar(15) NOT_NULL
 	
 
 (MTO performance)
 suit:
-	+description: varchar
-	+size: int(2)
+	+description: varchar(50) NOT_NULL
+	+size: tinyint
 	+quantity: int
 
 
 (MTO performance)
 requisite:
-	+description: varchar
-	+size: int
+	+description: varchar(50) NOT_NULL
+	+size: varchar(10) NOT_NULL
 	
 
 (MTM performance)
 competition:
-	+title: varchar
-	+type: varchar
-	+date: date
-	+adress: varchar
+	+title: varchar(50) NOT_NULL
+	+type: varchar(15) NOT_NULL
+	+date: date NOT_NULL
+	+adress: varchar(50) NOT_NULL
 
 
 (MTM hall)
 (MTM choreographer)
 (MTM group)
 schedule:
-	+date: date
-	+start_time: time
-	+end_time: time
+	+date: date NOT_NULL
+	+start_time: time NOT_NULL
+	+end_time: time NOT_NULL
 
 
 (MTM schedule)
 hall:
-	+number: int
-	+size: int
-	+presence_morror: boolean
-	+presence_locker_room: boolean
+	+number: tinyint NOT_NULL
+	+size: int NOT_NULL
+	+presence_morror: boolean NOT_NULL
+	+presence_locker_room: boolean NOT_NULL
 	
 
 (MTO dancer)
 transaction:
-	+date: date
-	+amount: int
+	+date: date NOT_NULL
+	+amount: int NOT_NULL
