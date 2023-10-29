@@ -1,6 +1,5 @@
 (OTO information)
 (OTO choreographer)
-(MTO role)
 information:
 	+name: varchar(15) NOT_NULL
 	+surmane: varchar(15) NOT_NULL
@@ -8,10 +7,6 @@ information:
 	+date_birth: date NOT_NULL
 	+age: tinyint >= 4
 	
-(OTM information)
-role:
-	+name_role: varchar(15) NOT_NULL
-
 (MTM group)
 (MTM direction)
 (OTM transaction)
@@ -24,7 +19,7 @@ dancer:
 (MTM choreographer)
 (MTM schedule)
 (OTM choreography)
-group:
+group_dance:
 	+name: varchar(15) NOT_NULL
 	+age: varchar(5) NOT_NULL
 
@@ -64,14 +59,14 @@ music:
 	
 (MTM competition)
 (OTO choreographer)
-(OTM suit)
+(MTM suit)
 (OTM requisite)
 performance:
 	+name: varchar(25) NOT_NULL
 	+share: varchar(15) NOT_NULL
 	
 
-(MTO performance)
+(MTM performance)
 suit:
 	+description: varchar(50) NOT_NULL
 	+size: tinyint
@@ -110,6 +105,6 @@ hall:
 	
 
 (MTO dancer)
-transaction:
-	+date: date NOT_NULL
+transact:
+	+date_trans: date NOT_NULL
 	+amount: int NOT_NULL	
